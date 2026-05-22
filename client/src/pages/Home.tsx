@@ -1,25 +1,36 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
-
 /**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
+ * GLAM BY DOVE — Home (single-page experience)
+ * Style: "Gilded Owambe" — luxury Nigerian beauty editorial.
+ * Order: Header → Hero → Hub → Services → Portfolio → About → Testimonials → FAQ → Contact → Footer
  */
-export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
+import { Header } from "@/components/site/Header";
+import { Hero } from "@/components/site/Hero";
+import { ServicesHub } from "@/components/site/ServicesHub";
+import { Services } from "@/components/site/Services";
+import { Portfolio } from "@/components/site/Portfolio";
+import { About } from "@/components/site/About";
+import { Testimonials } from "@/components/site/Testimonials";
+import { FAQ } from "@/components/site/FAQ";
+import { Contact } from "@/components/site/Contact";
+import { Footer } from "@/components/site/Footer";
+import { FloatingWhatsApp } from "@/components/site/FloatingWhatsApp";
 
+export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen bg-[color:var(--cream)] text-[color:var(--cocoa)]">
+      <Header />
       <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+        <Hero />
+        <ServicesHub />
+        <Services />
+        <Portfolio />
+        <About />
+        <Testimonials />
+        <FAQ />
+        <Contact />
       </main>
+      <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }
