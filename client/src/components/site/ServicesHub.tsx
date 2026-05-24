@@ -1,9 +1,10 @@
 /**
  * GLAM BY DOVE — ServicesHub
- * Style: "Gilded Owambe" — three arched "ceremony cards" (Bridal, Owambe, Gele)
- * sitting on a deep aubergine band with gold rule and aso-pattern watermark.
+ * Style: "Gilded Owambe" — arched service cards sitting on a deep aubergine
+ * band with gold rule and aso-pattern watermark.
  */
 import { ArrowUpRight } from "lucide-react";
+import { SERVICE_IMAGES } from "@/lib/brand";
 import { useReveal } from "@/hooks/useReveal";
 
 const HUB = [
@@ -11,22 +12,43 @@ const HUB = [
     eyebrow: "N° 01",
     title: "Bridal",
     italic: "for the aisle",
-    image:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663644520441/Lqf4T2LnejD5iGnXZp5tVD/gbd-card-bridal-WP3b4sC7am2fAzRtzV3Efh.webp",
+    href: "/services#service-bridal",
+    image: SERVICE_IMAGES.bridal,
   },
   {
     eyebrow: "N° 02",
-    title: "Owambe & Gele",
+    title: "Owambe",
     italic: "for the celebration",
-    image:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663644520441/Lqf4T2LnejD5iGnXZp5tVD/gbd-card-gele-Hxkh9oWGk2WsV3utxLnN8t.webp",
+    href: "/services#service-owambe",
+    image: SERVICE_IMAGES.owambe,
   },
   {
     eyebrow: "N° 03",
+    title: "Birthday",
+    italic: "for your spotlight",
+    href: "/services#service-birthday",
+    image: SERVICE_IMAGES.birthday,
+  },
+  {
+    eyebrow: "N° 04",
+    title: "Gele",
+    italic: "for the crown",
+    href: "/services#service-gele",
+    image: SERVICE_IMAGES.gele,
+  },
+  {
+    eyebrow: "N° 05",
     title: "Convocation",
     italic: "for the milestone",
-    image:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663644520441/Lqf4T2LnejD5iGnXZp5tVD/gbd-card-graduation-264cx4JLgzssMpcAwETHqt.webp",
+    href: "/services#service-graduation",
+    image: SERVICE_IMAGES.graduation,
+  },
+  {
+    eyebrow: "N° 06",
+    title: "Lessons",
+    italic: "for your skill",
+    href: "/lessons",
+    image: SERVICE_IMAGES.lessons,
   },
 ];
 
@@ -59,19 +81,19 @@ export function ServicesHub() {
             The Hub
           </span>
           <h2 className="reveal mt-3 font-display text-[clamp(2rem,3.4vw,2.85rem)] text-[color:var(--cream)]">
-            Three signature{" "}
+            Signature{" "}
             <span className="font-italic-serif italic text-[color:var(--gold-soft)]">
-              ceremonies
+              services
             </span>
             , one artist.
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {HUB.map((card, i) => (
             <a
               key={card.title}
-              href="#services"
+              href={card.href}
               className="reveal group relative block focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--aubergine)]"
               style={{ transitionDelay: `${i * 80}ms` }}
             >

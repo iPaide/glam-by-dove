@@ -35,13 +35,13 @@ export function About() {
               <img
                 src={ARTIST_IMAGE}
                 alt="Dove, founder and lead artist of Glam By Dove"
-                className="absolute inset-0 size-full object-cover"
+                className="absolute inset-0 size-full object-cover object-[center_42%]"
                 loading="lazy"
               />
             </div>
             <div className="absolute -bottom-4 -right-3 sm:-right-6 bg-[color:var(--cream)] text-[color:var(--cocoa)] px-5 py-3 shadow-[0_18px_40px_-20px_rgba(0,0,0,0.5)]">
               <div className="text-[10.5px] tracking-[0.28em] uppercase text-[color:var(--gold)] font-semibold">
-                The Artist
+                Lead Makeup Artist
               </div>
               <div className="mt-1 font-display italic text-[15px]">Dove</div>
             </div>
@@ -55,16 +55,16 @@ export function About() {
               className="eyebrow"
               style={{ color: "var(--gold-soft)" }}
             >
-              Meet the Artist
+              Meet Dove
             </span>
           </div>
           <h2
             className="reveal mt-3 font-display text-[clamp(2rem,3.6vw,3rem)] leading-[1.06] text-[color:var(--cream)]"
             style={{ transitionDelay: "60ms" }}
           >
-            The hands behind{" "}
+            The artist behind{" "}
             <span className="font-italic-serif italic text-[color:var(--gold-soft)]">
-              the glam
+              the glow
             </span>
             .
           </h2>
@@ -74,28 +74,49 @@ export function About() {
             style={{ transitionDelay: "120ms" }}
           >
             <p>
-              Welcome. I'm the founder and lead artist behind {BRAND.name}{" "}
+              Dove is the founder and lead makeup artist behind {BRAND.name}{" "}
               <span className="font-italic-serif italic text-[color:var(--gold-soft)]">
                 ({BRAND.handle})
               </span>
-              . With years of experience in bridal beauty, event cosmetics, and
-              the intricate art of turban gele styling, my mission is simple:
-              to make every client feel confident, powerful, and utterly
-              beautiful.
+              . With 5+ years of hands-on beauty experience, she creates calm,
+              polished glam for Nigerian brides, Owambe guests, birthdays,
+              shoots, convocation days, and women who want to learn their own
+              face with confidence.
             </p>
             <p>
-              Based in the heart of Southwestern Nigeria, I regularly travel to
-              bring luxury beauty experiences directly to clients across{" "}
-              <span className="text-[color:var(--gold-soft)] font-medium">
-                {BRAND.cities.join(", ")}
-              </span>
-              . Whether you are walking down the aisle, receiving your
-              university degree, or stepping out for a grand Owambe, I handle
-              your look with precision, premium products, and passion.
+              Based in {BRAND.baseCity}, she is close to Akure and Ibadan and
+              available to travel when timing and logistics are agreed. Every
+              booking is handled with attention to skin prep, long wear,
+              photography, ready-by time, and the little details that make a
+              look feel finished in person and on camera.
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {[
+                "Bridal, Owambe, gele, birthday, and lessons",
+                "Ado-Ekiti based, available to travel by agreement",
+                "Skin-first prep with soft or full glam finishes",
+                "Instant WhatsApp response for date checks",
+              ].map((point) => (
+                <div
+                  key={point}
+                  className="flex items-start gap-3 border border-[color:var(--gold)]/20 bg-[color:var(--cream)]/[0.04] px-4 py-3"
+                >
+                  <span className="mt-2 inline-block size-1.5 rotate-45 bg-[color:var(--gold-soft)]" />
+                  <span className="text-[13.5px] leading-[1.6] text-[color:var(--cream)]/82">
+                    {point}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <p>
+              Whether you are walking down the aisle, stepping out for a grand
+              Owambe, or preparing for a milestone shoot, Dove's work is built
+              around one promise: your glam should feel comfortable, elegant,
+              and unforgettable.
             </p>
             <p className="font-italic-serif italic text-[18px] md:text-[19px] text-[color:var(--gold-soft)]">
-              "Exceptional service and flawless results are non-negotiable
-              here. Let's collaborate to create your dream look."
+              "Beauty should feel personal. My job is to listen, refine the
+              details, and give you a look you can carry with confidence."
             </p>
           </div>
 
@@ -104,9 +125,9 @@ export function About() {
             style={{ transitionDelay: "180ms" }}
           >
             {[
-              { k: "5+", v: "Years crafting glam" },
-              { k: "200+", v: "Brides & guests styled" },
-              { k: "3", v: "Cities served" },
+              { k: "5+", v: "Years of beauty work" },
+              { k: "Ado", v: "Based in Ekiti" },
+              { k: "NG", v: "Travel by agreement" },
             ].map((stat) => (
               <div key={stat.v}>
                 <div className="font-display text-[28px] md:text-[32px] text-[color:var(--gold-soft)] leading-none">

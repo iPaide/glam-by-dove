@@ -22,7 +22,7 @@ export function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with Glam By Dove on WhatsApp"
-      className={`fixed bottom-5 right-5 z-50 transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] ${
+      className={`fixed bottom-5 right-5 z-50 hidden md:block transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] ${
         show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
       }`}
     >

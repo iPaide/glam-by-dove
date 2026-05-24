@@ -8,9 +8,36 @@ export const BRAND = {
   name: "Glam By Dove",
   shortName: "GBD",
   handle: "@itz_dovesglam",
+  tiktokHandle: "@itz_doveglam",
   instagramUrl: "https://www.instagram.com/itz_dovesglam/",
+  tiktokUrl: "https://www.tiktok.com/@itz_doveglam?_r=1&_t=ZT-96c6nLWgWY1",
+  socialLinks: [
+    {
+      label: "WhatsApp",
+      value: "Message Dove directly",
+      url:
+        "https://wa.me/2348030616727?text=" +
+        encodeURIComponent(
+          "Hi Dove! I'd love to book a glam session — please share availability and pricing.",
+        ),
+      primary: true,
+    },
+    {
+      label: "Instagram",
+      value: "@itz_dovesglam",
+      url: "https://www.instagram.com/itz_dovesglam/",
+      primary: false,
+    },
+    {
+      label: "TikTok",
+      value: "@itz_doveglam",
+      url: "https://www.tiktok.com/@itz_doveglam?_r=1&_t=ZT-96c6nLWgWY1",
+      primary: false,
+    },
+  ],
   tagline: "Flawless Glam for Your Most Memorable Moments.",
   cities: ["Ado-Ekiti", "Akure", "Ibadan"],
+  baseCity: "Ado-Ekiti",
   phoneDisplay: "0803 061 6727",
   phoneRaw: "+2348030616727",
   whatsappUrl:
@@ -18,23 +45,50 @@ export const BRAND = {
     encodeURIComponent(
       "Hi Dove! I'd love to book a glam session — please share availability and pricing.",
     ),
-  email: "hello@glambydove.com",
+  email: "dovesglam@gmail.com",
 };
 
 export const HERO = {
-  eyebrow: "Bridal · Gele · Owambe · Graduation",
+  eyebrow: "Bridal · Owambe · Aso-Ebi · Gele · Lessons",
   headline: "Flawless glam for your most",
   headlineItalic: "memorable moments",
-  body: "Your beauty deserves a professional touch. At Glam By Dove, we specialize in enhancing your natural features to create timeless, radiant looks for weddings, graduations, and celebrations. Let's make you unforgettable.",
+  body: "From traditional weddings and introductions to Owambe Saturdays, birthdays, and convocation days, Glam By Dove creates polished, long-wearing looks for Nigerian celebrations. Let's make you unforgettable.",
 };
 
 export const HERO_IMAGE =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663644520441/Lqf4T2LnejD5iGnXZp5tVD/gbd-hero-bride-RP3mJmkNNAJXV6wgcqWqZF.webp";
+  "/assets/glam-by-dove-royal-bridal-ai.jpg";
 
 export const ARTIST_IMAGE =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663644520441/Lqf4T2LnejD5iGnXZp5tVD/gbd-portrait-artist-HijrKbdSPLfCpk7dZBsgVE.webp";
+  "/assets/glam-by-dove-artist-owner.jpg";
 
-export type ServiceCategory = "bridal" | "owambe" | "gele" | "graduation";
+export const LOCAL_IMAGES = {
+  birthday: "/assets/glam-by-dove-birthday.jpg",
+  bridalWhite: "/assets/glam-by-dove-bridal-white.jpg",
+  geleGold: "/assets/glam-by-dove-gele-gold.jpg",
+  geleWine: "/assets/glam-by-dove-gele-wine.jpg",
+  graduation: "/assets/glam-by-dove-graduation.jpg",
+  lessonsAcademy: "/assets/glam-by-dove-lessons-academy-ai.jpg",
+  owambeBlackTea: "/assets/glam-by-dove-owambe-black-tea-clean.jpg",
+  owambeSoft: "/assets/glam-by-dove-owambe-soft.jpg",
+  royalBridal: "/assets/glam-by-dove-royal-bridal-ai.jpg",
+};
+
+export const SERVICE_IMAGES = {
+  bridal: LOCAL_IMAGES.royalBridal,
+  owambe: LOCAL_IMAGES.owambeBlackTea,
+  birthday: LOCAL_IMAGES.birthday,
+  gele: LOCAL_IMAGES.geleGold,
+  graduation: LOCAL_IMAGES.graduation,
+  lessons: LOCAL_IMAGES.lessonsAcademy,
+};
+
+export type ServiceCategory =
+  | "bridal"
+  | "owambe"
+  | "birthday"
+  | "gele"
+  | "graduation"
+  | "lessons";
 
 export interface Service {
   id: ServiceCategory;
@@ -54,24 +108,23 @@ export const SERVICES: Service[] = [
     name: "The Royal Bridal",
     italic: "for the aisle",
     blurb:
-      "A complete bridal beauty experience designed to last from first-look to last dance. Skin prep, premium makeup, lashes, and an optional signature gele to complete the look.",
+      "A custom bridal beauty experience for traditional weddings, white weddings, introductions, and bridal portraits. Your quote is shaped around timing, travel, touch-ups, gele, aso-ebi colors, and the full bridal party plan.",
     inclusions: [
       "In-depth skin prep & priming",
       "Premium long-wear bridal makeup",
       "Custom lashes & contour",
       "Touch-up kit for the day",
     ],
-    price: "Contact for quote",
-    image:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663644520441/Lqf4T2LnejD5iGnXZp5tVD/gbd-card-bridal-WP3b4sC7am2fAzRtzV3Efh.webp",
+    price: "Custom bridal quote",
+    image: SERVICE_IMAGES.bridal,
   },
   {
     id: "owambe",
     number: "N° 02",
-    name: "Owambe & Birthday Glam",
+    name: "Owambe Glam",
     italic: "for the celebration",
     blurb:
-      "Party-ready, long-wearing glam built for Owambe heat and dance floors. Bold or soft — your call. Travel and on-site styling available.",
+      "Party-ready, long-wearing glam built for Owambe heat, aso-ebi color stories, family photos, greetings, and dance floors. Bold or soft — your call.",
     inclusions: [
       "Sweat-resistant base & set",
       "Statement eye or soft glam",
@@ -79,33 +132,47 @@ export const SERVICES: Service[] = [
       "Lip combo of your choice",
     ],
     price: "From ₦35,000",
-    image:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663644520441/Lqf4T2LnejD5iGnXZp5tVD/gbd-card-owambe-6mMDmhTNxmfjd67vkwBNii.webp",
+    image: SERVICE_IMAGES.owambe,
+  },
+  {
+    id: "birthday",
+    number: "N° 03",
+    name: "Birthday Glam",
+    italic: "for your spotlight",
+    blurb:
+      "Camera-ready birthday glam for dinners, shoots, parties, and intimate celebrations. Soft glam, full glam, or a look built around your birthday outfit and color theme.",
+    inclusions: [
+      "Skin-prepped photo-ready base",
+      "Soft or full glam finish",
+      "Lashes and lip combo",
+      "Setting for long wear",
+    ],
+    price: "From ₦25,000",
+    image: SERVICE_IMAGES.birthday,
   },
   {
     id: "gele",
-    number: "N° 03",
-    name: "Signature Turban Gele",
+    number: "N° 04",
+    name: "Gele Artist",
     italic: "the architectural crown",
     blurb:
-      "Sculpted, photo-ready gele styling using premium aso-oke. Booked alone or layered onto a glam package as a finishing crown.",
+      "Sculpted, photo-ready gele styling for trad, introduction, church, Owambe, and aso-ebi moments. Booked alone or layered onto a glam package as a finishing crown.",
     inclusions: [
       "Custom gele consultation",
       "Pleated, sculpted finish",
       "Pinning & secure fit",
       "Coordination with your aso-ebi",
     ],
-    price: "From ₦25,000",
-    image:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663644520441/Lqf4T2LnejD5iGnXZp5tVD/gbd-card-gele-Hxkh9oWGk2WsV3utxLnN8t.webp",
+    price: "From ₦5,000",
+    image: SERVICE_IMAGES.gele,
   },
   {
     id: "graduation",
-    number: "N° 04",
+    number: "N° 05",
     name: "Convocation & Shoots",
     italic: "for your milestone",
     blurb:
-      "Fresh, photo-friendly glam tailored for graduation portraits, convocation ceremonies, and editorial shoots. Skin-first, camera-ready.",
+      "Fresh, photo-friendly glam tailored for convocation portraits, graduation ceremonies, signing-out shoots, and editorial sessions. Skin-first, camera-ready.",
     inclusions: [
       "Dewy, camera-ready base",
       "Soft definition & natural lash",
@@ -113,78 +180,90 @@ export const SERVICES: Service[] = [
       "Setting for all-day wear",
     ],
     price: "From ₦25,000",
-    image:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663644520441/Lqf4T2LnejD5iGnXZp5tVD/gbd-card-graduation-264cx4JLgzssMpcAwETHqt.webp",
+    image: SERVICE_IMAGES.graduation,
+  },
+  {
+    id: "lessons",
+    number: "N° 06",
+    name: "Makeup Lessons",
+    italic: "learn your own face",
+    blurb:
+      "Personal makeup lessons and tutorials for beginners or beauty lovers who want to improve everyday glam, owambe-ready application, product use, and technique.",
+    inclusions: [
+      "Beginner-friendly step-by-step guidance",
+      "Product and brush recommendations",
+      "Brows, base, eyes, and lips practice",
+      "One-on-one technique correction",
+    ],
+    price: "Contact for rate",
+    image: SERVICE_IMAGES.lessons,
   },
 ];
 
 export interface GalleryItem {
   id: string;
-  category: Exclude<ServiceCategory, never> | "details";
+  category: ServiceCategory;
   src: string;
   alt: string;
+  instagramUrl: string;
 }
 
 export const GALLERY: GalleryItem[] = [
   {
     id: "g1",
     category: "bridal",
-    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663644520441/Lqf4T2LnejD5iGnXZp5tVD/gbd-card-bridal-WP3b4sC7am2fAzRtzV3Efh.webp",
-    alt: "Bride with soft glow makeup and lace veil",
+    src: SERVICE_IMAGES.bridal,
+    alt: "Traditional bride in blue aso-oke gele",
+    instagramUrl: "https://www.instagram.com/reel/DPlWOAaArua/",
   },
   {
     id: "g2",
-    category: "gele",
-    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663644520441/Lqf4T2LnejD5iGnXZp5tVD/gbd-card-gele-Hxkh9oWGk2WsV3utxLnN8t.webp",
-    alt: "Antique gold sculpted turban gele",
+    category: "bridal",
+    src: LOCAL_IMAGES.bridalWhite,
+    alt: "White bridal glam with soft radiant finish",
+    instagramUrl: "https://www.instagram.com/reel/DX6mPUKCON3/",
   },
   {
     id: "g3",
     category: "owambe",
-    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663644520441/Lqf4T2LnejD5iGnXZp5tVD/gbd-card-owambe-6mMDmhTNxmfjd67vkwBNii.webp",
-    alt: "Owambe glam with copper smoky eye and gold earrings",
+    src: SERVICE_IMAGES.owambe,
+    alt: "Owambe guest glam with green lace and gold gele",
+    instagramUrl: "https://www.instagram.com/reel/DNQ3_nHswq5/",
   },
   {
     id: "g4",
-    category: "graduation",
-    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663644520441/Lqf4T2LnejD5iGnXZp5tVD/gbd-card-graduation-264cx4JLgzssMpcAwETHqt.webp",
-    alt: "Graduation portrait with fresh dewy makeup",
+    category: "owambe",
+    src: LOCAL_IMAGES.owambeSoft,
+    alt: "Soft traditional glam with red bead styling",
+    instagramUrl: "https://www.instagram.com/reel/DQt6jGeAv3C/",
   },
   {
     id: "g5",
-    category: "details",
-    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663644520441/Lqf4T2LnejD5iGnXZp5tVD/gbd-gallery-1-8By4MX7HktWYGc4wD4dozQ.webp",
-    alt: "Close-up of bronze halo eye look",
+    category: "gele",
+    src: SERVICE_IMAGES.gele,
+    alt: "Gold gele with full glam finish",
+    instagramUrl: "https://www.instagram.com/reel/DV8WLROArma/",
   },
   {
     id: "g6",
     category: "gele",
-    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663644520441/Lqf4T2LnejD5iGnXZp5tVD/gbd-gallery-2-CQaM27cr8ejhVnjWV3h8TJ.webp",
-    alt: "Detail of pleated gold aso-oke gele",
+    src: LOCAL_IMAGES.geleWine,
+    alt: "Wine gele with clean evening glam",
+    instagramUrl: "https://www.instagram.com/reel/DJ_Sl0PsYwN/",
   },
   {
     id: "g7",
-    category: "bridal",
-    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663644520441/Lqf4T2LnejD5iGnXZp5tVD/gbd-gallery-3-EuN46PH6xvemFa9JVD6Pcm.webp",
-    alt: "Bride mid-laugh with pearl earrings",
+    category: "birthday",
+    src: SERVICE_IMAGES.birthday,
+    alt: "Birthday-ready soft glam with glossy lips",
+    instagramUrl: "https://www.instagram.com/reel/DWgpNAigvu-/",
   },
   {
     id: "g8",
-    category: "owambe",
-    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663644520441/Lqf4T2LnejD5iGnXZp5tVD/gbd-gallery-4-ZHUBtL5JHMiFWVth4uWDsA.webp",
-    alt: "Owambe guest in plum and gold aso-ebi",
-  },
-  {
-    id: "g9",
     category: "graduation",
-    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663644520441/Lqf4T2LnejD5iGnXZp5tVD/gbd-gallery-5-8tnBAtcUtn3sSzNQvA5VGW.webp",
-    alt: "Graduate in cap and gown smiling",
-  },
-  {
-    id: "g10",
-    category: "details",
-    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663644520441/Lqf4T2LnejD5iGnXZp5tVD/gbd-gallery-6-XsuNF4YfFJgcKRczwCfthd.webp",
-    alt: "Glossy berry-plum lip close-up",
+    src: SERVICE_IMAGES.graduation,
+    alt: "Convocation glam with editorial styling",
+    instagramUrl: "https://www.instagram.com/reel/DW8fZOMAuIN/",
   },
 ];
 
@@ -222,18 +301,30 @@ export const TESTIMONIALS: Testimonial[] = [
 export const FAQS = [
   {
     q: "Where are you based, and do you travel?",
-    a: "Glam By Dove is based across Southwestern Nigeria and regularly serves clients in Ado-Ekiti, Akure, and Ibadan. Travel for destination events outside these cities is available with a small logistics fee — just mention your venue when booking.",
+    a: "Glam By Dove is based in Ado-Ekiti, with easy access to Akure and Ibadan. Travel within Nigeria and for destination events is available once timing, logistics, and travel costs are agreed.",
   },
   {
     q: "How early should I book my bridal date?",
-    a: "Bridal dates are usually secured 3–6 months ahead, and peak wedding months (November, December, April) book out fastest. A small deposit holds your date.",
+    a: "Bridal dates are usually secured 3-6 months ahead, and peak wedding months (November, December, April) book out fastest. Full upfront payment secures your date once your quote and timing are confirmed.",
   },
   {
     q: "Can I book gele styling alone?",
-    a: "Yes. Signature Turban Gele is available as a stand-alone service or as a finishing crown layered onto any glam package.",
+    a: "Yes. Gele Artist bookings are available as a stand-alone service or as a finishing crown layered onto any glam package.",
   },
   {
     q: "What products do you use?",
     a: "Only premium, long-wear, skin-friendly products tested on rich melanin tones. Your skin type and any sensitivities are discussed during consultation.",
+  },
+  {
+    q: "What happens after I submit the booking form?",
+    a: "The form opens a pre-filled WhatsApp message so you can send your details directly. Dove responds as quickly as possible, confirms availability, shares the right quote, and sends payment details when you are ready to secure the date.",
+  },
+  {
+    q: "Do you handle group bookings and early call times?",
+    a: "Yes. For bridal parties, family glam, or multiple Owambe guests, share the number of faces, venue, and ready-by time when you inquire. Early starts and travel are planned into the quote.",
+  },
+  {
+    q: "Can I reschedule after payment?",
+    a: "Bookings are secured with full upfront payment and payments are non-refundable. Reschedules depend on date availability, so message as early as possible if your plans change.",
   },
 ];

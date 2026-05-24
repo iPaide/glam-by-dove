@@ -7,18 +7,20 @@ import { useEffect, useState } from "react";
 import { Logo } from "@/components/brand/Logo";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLocation } from "wouter";
 
 const NAV = [
-  { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "About", href: "#about" },
-  { label: "Reviews", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/services" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Lessons", href: "/lessons" },
+  { label: "Reviews", href: "/#testimonials" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -52,23 +54,16 @@ export function Header() {
 
         <nav className="hidden lg:flex items-center gap-9">
           {NAV.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="group relative text-[13px] font-medium tracking-[0.18em] uppercase text-[color:var(--cocoa)]/80 hover:text-[color:var(--aubergine)] transition-colors duration-200"
-            >
-              {item.label}
-              <span className="pointer-events-none absolute -bottom-1.5 left-0 h-px w-full origin-left scale-x-0 bg-[color:var(--gold)] transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-x-100" />
-            </a>
+            <NavLink key={item.href} {...item} currentPath={location} />
           ))}
         </nav>
 
         <div className="flex items-center gap-3">
           <a
-            href="#contact"
+            href="/contact"
             className="foil-cta hidden sm:inline-flex items-center justify-center px-5 h-11 bg-[color:var(--aubergine)] text-[color:var(--cream)] text-[12px] font-semibold tracking-[0.22em] uppercase transition-transform active:scale-[0.97] hover:bg-[color:var(--aubergine-deep)]"
           >
-            Book Now
+            Check Dates
           </a>
           <button
             onClick={() => setOpen((v) => !v)}
@@ -94,20 +89,68 @@ export function Header() {
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="py-3 border-b border-[color:var(--gold)]/15 text-[15px] font-medium tracking-[0.16em] uppercase text-[color:var(--cocoa)]/85 hover:text-[color:var(--aubergine)] transition-colors"
+              className={cn(
+                "py-3 border-b border-[color:var(--gold)]/15 text-[15px] font-medium tracking-[0.16em] uppercase transition-colors",
+                isActive(item.href, location)
+                  ? "text-[color:var(--aubergine)]"
+                  : "text-[color:var(--cocoa)]/85 hover:text-[color:var(--aubergine)]",
+              )}
             >
               {item.label}
             </a>
           ))}
           <a
-            href="#contact"
+            href="/contact"
             onClick={() => setOpen(false)}
             className="mt-4 inline-flex items-center justify-center h-12 bg-[color:var(--aubergine)] text-[color:var(--cream)] text-[12px] font-semibold tracking-[0.22em] uppercase"
           >
-            Book Your Session
+            Check Availability
           </a>
         </nav>
       </div>
     </header>
+  );
+}
+
+function isActive(href: string, currentPath: string) {
+  if (href === "/#testimonials") {
+    return (
+      currentPath === "/" &&
+      typeof window !== "undefined" &&
+      window.location.hash === "#testimonials"
+    );
+  }
+  return currentPath === href;
+}
+
+function NavLink({
+  label,
+  href,
+  currentPath,
+}: {
+  label: string;
+  href: string;
+  currentPath: string;
+}) {
+  const active = isActive(href, currentPath);
+
+  return (
+    <a
+      href={href}
+      className={cn(
+        "group relative text-[13px] font-medium tracking-[0.18em] uppercase transition-colors duration-200",
+        active
+          ? "text-[color:var(--aubergine)]"
+          : "text-[color:var(--cocoa)]/80 hover:text-[color:var(--aubergine)]",
+      )}
+    >
+      {label}
+      <span
+        className={cn(
+          "pointer-events-none absolute -bottom-1.5 left-0 h-px w-full origin-left bg-[color:var(--gold)] transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-x-100",
+          active ? "scale-x-100" : "scale-x-0",
+        )}
+      />
+    </a>
   );
 }

@@ -4,11 +4,37 @@
  * (arched on top), descriptive copy on the other, separated by gold hairline rules.
  */
 import { Check } from "lucide-react";
-import { SERVICES } from "@/lib/brand";
+import { SERVICES, type ServiceCategory } from "@/lib/brand";
 import { useReveal } from "@/hooks/useReveal";
 
-export function Services() {
+interface ServicesProps {
+  initialService?: ServiceCategory;
+  onlyService?: ServiceCategory;
+  eyebrow?: string;
+  title?: string;
+  italic?: string;
+  body?: string;
+}
+
+export function Services({
+  initialService,
+  onlyService,
+  eyebrow = "The Menu",
+  title = "Services &",
+  italic = "rates",
+  body = "Every booking begins with your event details: date, city, outfit, aso-ebi shade, and ready-by time. Travel and on-site styling are available across Southwestern Nigeria and beyond.",
+}: ServicesProps) {
   const ref = useReveal<HTMLElement>();
+  const availableServices = onlyService
+    ? SERVICES.filter((service) => service.id === onlyService)
+    : SERVICES;
+  const services = initialService
+    ? [
+        ...availableServices.filter((service) => service.id === initialService),
+        ...availableServices.filter((service) => service.id !== initialService),
+      ]
+    : availableServices;
+
   return (
     <section
       id="services"
@@ -17,20 +43,18 @@ export function Services() {
     >
       <div className="container">
         <div className="flex flex-col items-center text-center mb-16 md:mb-20">
-          <span className="reveal eyebrow">The Menu</span>
+          <span className="reveal eyebrow">{eyebrow}</span>
           <h2 className="reveal mt-3 font-display text-[clamp(2.1rem,4vw,3.25rem)] leading-[1.05] text-[color:var(--cocoa)]">
-            Services &{" "}
+            {title}{" "}
             <span className="font-italic-serif italic text-[color:var(--aubergine)]">
-              rates
+              {italic}
             </span>
           </h2>
           <p
             className="reveal mt-5 max-w-[58ch] text-[15px] md:text-[15.5px] leading-[1.75] text-[color:var(--cocoa)]/70"
             style={{ transitionDelay: "100ms" }}
           >
-            Every booking begins with a short consultation so the look, products,
-            and timing are tailored to you. Travel and on-site styling are
-            available across Southwestern Nigeria and beyond.
+            {body}
           </p>
           <div
             className="reveal mt-7 gold-rule w-full max-w-[420px]"
@@ -42,12 +66,13 @@ export function Services() {
         </div>
 
         <div className="flex flex-col gap-20 md:gap-28">
-          {SERVICES.map((s, i) => {
+          {services.map((s, i) => {
             const reverse = i % 2 === 1;
             return (
               <article
                 key={s.id}
-                className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center"
+                id={`service-${s.id}`}
+                className="scroll-mt-24 md:scroll-mt-28 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center"
               >
                 {/* Image */}
                 <div
@@ -106,14 +131,14 @@ export function Services() {
                   <div className="mt-8 flex items-end justify-between gap-6 border-t border-[color:var(--gold)]/30 pt-5">
                     <div>
                       <div className="text-[10.5px] tracking-[0.28em] uppercase text-[color:var(--cocoa)]/55 font-semibold">
-                        Investment
+                        Starting Rate
                       </div>
                       <div className="mt-1 font-display text-[22px] md:text-[26px] text-[color:var(--aubergine)]">
                         {s.price}
                       </div>
                     </div>
                     <a
-                      href="#contact"
+                      href="/contact"
                       className="inline-flex items-center justify-center h-11 px-5 border border-[color:var(--aubergine)] text-[color:var(--aubergine)] text-[11.5px] font-semibold tracking-[0.22em] uppercase hover:bg-[color:var(--aubergine)] hover:text-[color:var(--cream)] transition-all duration-200 active:scale-[0.97]"
                     >
                       Inquire

@@ -15,7 +15,7 @@ export function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative pt-28 md:pt-32 lg:pt-36 pb-16 md:pb-24 overflow-hidden"
+      className="relative pt-24 md:pt-32 lg:pt-36 pb-14 md:pb-24 overflow-hidden"
     >
       {/* Soft aso-pattern watermark on the bottom-left */}
       <div
@@ -55,14 +55,14 @@ export function Hero() {
             style={{ transitionDelay: "160ms" }}
           >
             <a
-              href="#contact"
+              href="/contact"
               className="foil-cta inline-flex items-center justify-center gap-2 h-12 px-7 bg-[color:var(--aubergine)] text-[color:var(--cream)] text-[12.5px] font-semibold tracking-[0.22em] uppercase transition-transform active:scale-[0.97] hover:bg-[color:var(--aubergine-deep)]"
             >
-              Book Your Session
+              Check Availability
               <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5" />
             </a>
             <a
-              href="#portfolio"
+              href="/portfolio"
               className="group inline-flex items-center gap-2 h-12 px-1 text-[12.5px] font-semibold tracking-[0.22em] uppercase text-[color:var(--cocoa)] hover:text-[color:var(--aubergine)] transition-colors"
             >
               <span className="relative">
@@ -79,7 +79,7 @@ export function Hero() {
             style={{ transitionDelay: "240ms" }}
           >
             <span className="inline-block size-1.5 rotate-45 bg-[color:var(--gold)]" />
-            Proudly serving {BRAND.cities.join(" · ")} & destination events
+            Based in {BRAND.baseCity} · available to travel by agreement
           </div>
         </div>
 
@@ -97,7 +97,7 @@ export function Hero() {
               className="absolute -inset-3 rounded-t-[300px] border border-[color:var(--gold)]/40"
             />
             {/* Arched portrait */}
-            <div className="arch-frame relative aspect-[3/4] bg-[color:var(--aubergine)] shadow-[0_30px_80px_-30px_rgba(59,31,43,0.55)]">
+            <div className="arch-frame relative aspect-[4/5] sm:aspect-[3/4] bg-[color:var(--aubergine)] shadow-[0_30px_80px_-30px_rgba(59,31,43,0.55)]">
               <img
                 src={HERO_IMAGE}
                 alt="Glam By Dove bridal model wearing a gold aso-oke gele"

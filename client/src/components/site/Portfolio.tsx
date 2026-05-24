@@ -7,26 +7,46 @@ import { useMemo, useState } from "react";
 import { GALLERY } from "@/lib/brand";
 import { cn } from "@/lib/utils";
 import { useReveal } from "@/hooks/useReveal";
+import { ExternalLink, Instagram } from "lucide-react";
 
-type Filter = "all" | "bridal" | "owambe" | "gele" | "graduation" | "details";
+type Filter =
+  | "all"
+  | "bridal"
+  | "owambe"
+  | "birthday"
+  | "gele"
+  | "graduation";
 
 const FILTERS: { id: Filter; label: string }[] = [
   { id: "all", label: "All Looks" },
   { id: "bridal", label: "Bridal" },
   { id: "owambe", label: "Owambe" },
+  { id: "birthday", label: "Birthday" },
   { id: "gele", label: "Gele" },
   { id: "graduation", label: "Convocation" },
-  { id: "details", label: "Details" },
 ];
 
 export function Portfolio() {
   const ref = useReveal<HTMLElement>();
   const [filter, setFilter] = useState<Filter>("all");
+  const [visibleFilter, setVisibleFilter] = useState<Filter>("all");
+  const [isSwitching, setIsSwitching] = useState(false);
 
   const items = useMemo(() => {
-    if (filter === "all") return GALLERY;
-    return GALLERY.filter((g) => g.category === filter);
-  }, [filter]);
+    if (visibleFilter === "all") return GALLERY;
+    return GALLERY.filter((g) => g.category === visibleFilter);
+  }, [visibleFilter]);
+
+  const handleFilterChange = (nextFilter: Filter) => {
+    if (nextFilter === filter || isSwitching) return;
+
+    setFilter(nextFilter);
+    setIsSwitching(true);
+    window.setTimeout(() => {
+      setVisibleFilter(nextFilter);
+      window.setTimeout(() => setIsSwitching(false), 60);
+    }, 180);
+  };
 
   return (
     <section
@@ -54,25 +74,32 @@ export function Portfolio() {
             className="reveal max-w-[42ch] text-[14.5px] leading-[1.75] text-[color:var(--cocoa)]/70"
             style={{ transitionDelay: "100ms" }}
           >
-            A selection of recent bridal, Owambe, gele, and convocation work —
-            shot in natural and studio light. Filter to see your moment.
+            Tap a client look to open the matching Instagram post or reel.
+            Each card is ready for the exact client links you choose.
           </p>
         </div>
 
-        <div className="reveal flex flex-wrap gap-2 md:gap-3 mb-10">
+        <div
+          className="reveal flex flex-wrap gap-2 md:gap-3 mb-3"
+          role="tablist"
+          aria-label="Portfolio categories"
+        >
           {FILTERS.map((f) => {
             const active = filter === f.id;
             return (
               <button
                 key={f.id}
-                onClick={() => setFilter(f.id)}
+                onClick={() => handleFilterChange(f.id)}
+                role="tab"
                 className={cn(
                   "h-10 px-4 text-[11.5px] font-semibold tracking-[0.22em] uppercase border transition-all duration-200 active:scale-[0.97]",
                   active
                     ? "bg-[color:var(--aubergine)] border-[color:var(--aubergine)] text-[color:var(--cream)]"
                     : "border-[color:var(--gold)]/40 text-[color:var(--cocoa)]/80 hover:border-[color:var(--aubergine)] hover:text-[color:var(--aubergine)]",
                 )}
-                aria-pressed={active}
+                aria-selected={active}
+                disabled={isSwitching}
+                type="button"
               >
                 {f.label}
               </button>
@@ -80,16 +107,34 @@ export function Portfolio() {
           })}
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5">
+        <p className="reveal mb-10 text-[11px] font-semibold tracking-[0.22em] uppercase text-[color:var(--cocoa)]/55">
+          Showing {items.length} {items.length === 1 ? "look" : "looks"}
+        </p>
+
+        <div
+          className={cn(
+            "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)]",
+            isSwitching
+              ? "opacity-0 translate-y-3 pointer-events-none"
+              : "opacity-100 translate-y-0",
+          )}
+          role="tabpanel"
+          aria-live="polite"
+          aria-busy={isSwitching}
+        >
           {items.map((g, i) => (
             <figure
               key={g.id}
-              className="reveal group relative overflow-hidden bg-[color:var(--aubergine)]/5"
+              className="group relative overflow-hidden bg-[color:var(--aubergine)]/5 animate-in fade-in slide-in-from-bottom-2 duration-500"
               style={{ transitionDelay: `${(i % 8) * 50}ms` }}
             >
-              <div
+              <a
+                href={g.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Open ${g.alt} on Instagram`}
                 className={cn(
-                  "relative aspect-square overflow-hidden",
+                  "relative block w-full aspect-square overflow-hidden text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--cream)]",
                   i % 5 === 0 && "arch-frame",
                 )}
               >
@@ -103,15 +148,25 @@ export function Portfolio() {
                   aria-hidden
                   className="absolute inset-0 bg-gradient-to-t from-[rgba(20,10,15,0.55)] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 />
+                <span className="absolute left-2.5 top-2.5 inline-flex items-center gap-1 bg-[color:var(--cream)]/90 px-2.5 py-1 text-[9.5px] font-semibold tracking-[0.2em] uppercase text-[color:var(--aubergine)] shadow-[0_10px_24px_-18px_rgba(59,31,43,0.5)] md:hidden">
+                  {g.category}
+                </span>
+                <span className="absolute right-2.5 top-2.5 inline-flex size-9 items-center justify-center bg-[color:var(--cream)]/90 text-[color:var(--aubergine)] opacity-100 transition-opacity duration-300 md:opacity-0 group-hover:opacity-100">
+                  <Instagram className="size-4" />
+                </span>
                 <figcaption className="absolute inset-x-0 bottom-0 p-3 md:p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] text-[color:var(--cream)]">
                   <div className="text-[10px] tracking-[0.28em] uppercase text-[color:var(--gold-soft)] font-semibold">
-                    {g.category === "details" ? "Details" : g.category}
+                    {g.category}
                   </div>
                   <div className="mt-0.5 font-italic-serif italic text-[14px] md:text-[15px]">
                     {g.alt}
                   </div>
+                  <div className="mt-2 inline-flex items-center gap-1 text-[10px] font-semibold tracking-[0.22em] uppercase text-[color:var(--gold-soft)]">
+                    View on Instagram
+                    <ExternalLink className="size-3" />
+                  </div>
                 </figcaption>
-              </div>
+              </a>
             </figure>
           ))}
         </div>

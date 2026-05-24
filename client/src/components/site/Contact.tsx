@@ -1,19 +1,30 @@
 /**
  * GLAM BY DOVE — Contact / Booking
  * Style: "Gilded Owambe" — split form on cream paper with aubergine sidebar
- * containing phone, WhatsApp, Instagram, and the cities list.
+ * containing social links, phone, and the cities list.
  */
 import { useState, type FormEvent } from "react";
-import { Phone, MessageCircle, Instagram, MapPin, Send, CheckCircle2 } from "lucide-react";
+import {
+  Music2,
+  Phone,
+  MessageCircle,
+  Instagram,
+  MapPin,
+  Mail,
+  Send,
+  CheckCircle2,
+} from "lucide-react";
 import { BRAND } from "@/lib/brand";
 import { toast } from "sonner";
 import { useReveal } from "@/hooks/useReveal";
 
 const SERVICE_OPTIONS = [
   "The Royal Bridal",
-  "Owambe / Birthday Glam",
-  "Signature Turban Gele",
+  "Owambe Glam",
+  "Birthday Glam",
+  "Gele Artist",
   "Convocation / Graduation",
+  "Makeup Lessons / Tutorial",
   "Editorial / Photoshoot",
   "Not sure yet",
 ];
@@ -42,7 +53,8 @@ export function Contact() {
       `Service: ${service}`,
       notes ? `Notes: ${notes}` : ``,
     ].filter(Boolean);
-    return `https://wa.me/2348030616727?text=${encodeURIComponent(lines.join("\n"))}`;
+    const whatsappNumber = BRAND.phoneRaw.replace(/\D/g, "");
+    return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(lines.join("\n"))}`;
   }
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -88,28 +100,41 @@ export function Contact() {
               </h2>
               <p className="mt-5 max-w-[40ch] text-[14.5px] leading-[1.75] text-[color:var(--cream)]/80">
                 Share your event details and I'll respond personally with
-                availability and a tailored quote — usually within 24 hours.
+                availability and a tailored quote. Full upfront payment secures
+                your date and is non-refundable. WhatsApp is the fastest route,
+                but you can also reach out through social media.
               </p>
 
               <div className="mt-8 space-y-5">
-                <a
-                  href={BRAND.whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-4 border-t border-[color:var(--gold)]/30 pt-5"
-                >
-                  <span className="inline-flex items-center justify-center size-11 border border-[color:var(--gold)]/50 text-[color:var(--gold-soft)] group-hover:bg-[color:var(--gold)] group-hover:text-[color:var(--aubergine)] transition-colors">
-                    <MessageCircle className="size-4" />
-                  </span>
-                  <div>
-                    <div className="text-[10.5px] tracking-[0.24em] uppercase text-[color:var(--cream)]/60 font-semibold">
-                      WhatsApp
-                    </div>
-                    <div className="font-display text-[17px] text-[color:var(--cream)]">
-                      Message Dove directly
-                    </div>
-                  </div>
-                </a>
+                {BRAND.socialLinks.map((social) => {
+                  const Icon =
+                    social.label === "WhatsApp"
+                      ? MessageCircle
+                      : social.label === "TikTok"
+                        ? Music2
+                        : Instagram;
+                  return (
+                    <a
+                      key={social.label}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-4 border-t border-[color:var(--gold)]/30 pt-5"
+                    >
+                      <span className="inline-flex items-center justify-center size-11 border border-[color:var(--gold)]/50 text-[color:var(--gold-soft)] group-hover:bg-[color:var(--gold)] group-hover:text-[color:var(--aubergine)] transition-colors">
+                        <Icon className="size-4" />
+                      </span>
+                      <div>
+                        <div className="text-[10.5px] tracking-[0.24em] uppercase text-[color:var(--cream)]/60 font-semibold">
+                          {social.primary ? `${social.label} · Fastest` : social.label}
+                        </div>
+                        <div className="font-display text-[17px] text-[color:var(--cream)]">
+                          {social.value}
+                        </div>
+                      </div>
+                    </a>
+                  );
+                })}
 
                 <a
                   href={`tel:${BRAND.phoneRaw}`}
@@ -129,20 +154,18 @@ export function Contact() {
                 </a>
 
                 <a
-                  href={BRAND.instagramUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`mailto:${BRAND.email}`}
                   className="group flex items-center gap-4 border-t border-[color:var(--gold)]/30 pt-5"
                 >
                   <span className="inline-flex items-center justify-center size-11 border border-[color:var(--gold)]/50 text-[color:var(--gold-soft)] group-hover:bg-[color:var(--gold)] group-hover:text-[color:var(--aubergine)] transition-colors">
-                    <Instagram className="size-4" />
+                    <Mail className="size-4" />
                   </span>
                   <div>
                     <div className="text-[10.5px] tracking-[0.24em] uppercase text-[color:var(--cream)]/60 font-semibold">
-                      Instagram
+                      Email
                     </div>
                     <div className="font-display text-[17px] text-[color:var(--cream)]">
-                      {BRAND.handle}
+                      {BRAND.email}
                     </div>
                   </div>
                 </a>
@@ -156,7 +179,10 @@ export function Contact() {
                       Service Areas
                     </div>
                     <div className="font-display text-[17px] text-[color:var(--cream)]">
-                      {BRAND.cities.join(" · ")}
+                      Based in {BRAND.baseCity}
+                    </div>
+                    <div className="mt-1 text-[13px] leading-[1.55] text-[color:var(--cream)]/70">
+                      Close to Akure and Ibadan, available to travel by agreement.
                     </div>
                   </div>
                 </div>
@@ -253,7 +279,8 @@ export function Contact() {
                 <div className="md:col-span-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-2">
                   <p className="text-[12.5px] text-[color:var(--cocoa)]/60 leading-[1.6]">
                     Submitting opens a pre-filled WhatsApp message to Dove. You
-                    stay in control of when to send it.
+                    stay in control of when to send it. Dates are held only
+                    after availability and full upfront payment are confirmed.
                   </p>
                   <button
                     type="submit"

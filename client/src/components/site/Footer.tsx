@@ -5,7 +5,7 @@
  */
 import { Logo } from "@/components/brand/Logo";
 import { BRAND } from "@/lib/brand";
-import { Instagram, Phone, MessageCircle } from "lucide-react";
+import { Instagram, Music2, Phone, MessageCircle } from "lucide-react";
 
 export function Footer() {
   return (
@@ -19,8 +19,9 @@ export function Footer() {
           <div className="md:col-span-5">
             <Logo variant="light" size="lg" />
             <p className="mt-5 max-w-[40ch] text-[14.5px] leading-[1.75] text-[color:var(--cream)]/70">
-              Luxury bridal makeup, signature gele styling, Owambe and
-              graduation glam — for your most memorable moments.
+              Luxury bridal makeup, Owambe glam, birthday glam, gele artistry,
+              graduation looks, and makeup lessons — for your most memorable
+              moments.
             </p>
             <div className="mt-6 flex items-center gap-3">
               <a
@@ -31,6 +32,15 @@ export function Footer() {
                 className="inline-flex items-center justify-center size-10 border border-[color:var(--gold)]/40 text-[color:var(--gold-soft)] hover:bg-[color:var(--gold)] hover:text-[color:var(--aubergine)] transition-colors"
               >
                 <Instagram className="size-4" />
+              </a>
+              <a
+                href={BRAND.tiktokUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                className="inline-flex items-center justify-center size-10 border border-[color:var(--gold)]/40 text-[color:var(--gold-soft)] hover:bg-[color:var(--gold)] hover:text-[color:var(--aubergine)] transition-colors"
+              >
+                <Music2 className="size-4" />
               </a>
               <a
                 href={BRAND.whatsappUrl}
@@ -57,11 +67,11 @@ export function Footer() {
             </div>
             <ul className="mt-5 space-y-3 text-[14px]">
               {[
-                ["Services", "#services"],
-                ["Portfolio", "#portfolio"],
-                ["About", "#about"],
-                ["Reviews", "#testimonials"],
-                ["Contact", "#contact"],
+                ["Services", "/services"],
+                ["Portfolio", "/portfolio"],
+                ["Lessons", "/lessons"],
+                ["Reviews", "/#testimonials"],
+                ["Contact", "/contact"],
               ].map(([label, href]) => (
                 <li key={href}>
                   <a
@@ -87,6 +97,14 @@ export function Footer() {
               </li>
               <li>
                 <a
+                  href={`mailto:${BRAND.email}`}
+                  className="hover:text-[color:var(--gold-soft)] transition-colors"
+                >
+                  {BRAND.email}
+                </a>
+              </li>
+              <li>
+                <a
                   href={BRAND.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -95,8 +113,18 @@ export function Footer() {
                   Instagram · {BRAND.handle}
                 </a>
               </li>
+              <li>
+                <a
+                  href={BRAND.tiktokUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[color:var(--gold-soft)] transition-colors"
+                >
+                  TikTok · {BRAND.tiktokHandle}
+                </a>
+              </li>
               <li className="font-italic-serif italic text-[color:var(--cream)]/70 pt-2">
-                Serving {BRAND.cities.join(", ")} & destination events.
+                Based in {BRAND.baseCity}; available to travel by agreement.
               </li>
             </ul>
           </div>

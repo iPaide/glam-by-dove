@@ -5,11 +5,33 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Glam By Dove — Bridal, Gele & Owambe Glam | Ado-Ekiti · Akure · Ibadan</title>
+    <title>Glam By Dove — Bridal, Gele & Owambe Glam | Ado-Ekiti</title>
     <meta
       name="description"
-      content="Glam By Dove (itzdovesglam) — luxury bridal makeup, turban gele styling, Owambe and graduation glam across Ado-Ekiti, Akure and Ibadan." />
+      content="Glam By Dove (itzdovesglam) — Nigerian bridal makeup, gele artistry, Owambe, birthday, graduation glam and makeup lessons based in Ado-Ekiti, available to travel." />
     <meta name="theme-color" content="#3B1F2B" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://itzdovesglam.makeup/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Glam By Dove" />
+    <meta property="og:url" content="https://itzdovesglam.makeup/" />
+    <meta property="og:title" content="Glam By Dove — Bridal, Gele & Owambe Glam" />
+    <meta
+      property="og:description"
+      content="Nigerian bridal makeup, gele artistry, Owambe, birthday, graduation glam and makeup lessons based in Ado-Ekiti, available to travel." />
+    <meta
+      property="og:image"
+      content="https://itzdovesglam.makeup/assets/glam-by-dove-royal-bridal-ai.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Glam By Dove — Bridal, Gele & Owambe Glam" />
+    <meta
+      name="twitter:description"
+      content="Nigerian bridal makeup, gele artistry, Owambe, birthday, graduation glam and makeup lessons based in Ado-Ekiti, available to travel." />
+    <meta
+      name="twitter:image"
+      content="https://itzdovesglam.makeup/assets/glam-by-dove-royal-bridal-ai.jpg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,9 +43,48 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script
-      defer
-      src="%VITE_ANALYTICS_ENDPOINT%/umami"
-      data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BeautySalon",
+        "name": "Glam By Dove",
+        "alternateName": "itz_dovesglam",
+        "description": "Nigerian bridal makeup, gele artistry, Owambe, birthday, graduation glam and makeup lessons based in Ado-Ekiti, available to travel.",
+        "image": "https://itzdovesglam.makeup/assets/glam-by-dove-royal-bridal-ai.jpg",
+        "telephone": "+2348030616727",
+        "email": "dovesglam@gmail.com",
+        "url": "https://itzdovesglam.makeup",
+        "sameAs": [
+          "https://www.instagram.com/itz_dovesglam/",
+          "https://www.tiktok.com/@itz_doveglam?_r=1&_t=ZT-96c6nLWgWY1"
+        ],
+        "areaServed": [
+          { "@type": "City", "name": "Ado-Ekiti" },
+          { "@type": "City", "name": "Akure" },
+          { "@type": "City", "name": "Ibadan" }
+        ],
+        "serviceType": [
+          "Bridal makeup",
+          "Gele artist",
+          "Owambe glam",
+          "Birthday glam",
+          "Graduation makeup",
+          "Makeup lessons and tutorials",
+          "Photoshoot makeup"
+        ]
+      }
+    </script>
+    <script type="module">
+      const analyticsEndpoint = import.meta.env.VITE_ANALYTICS_ENDPOINT;
+      const analyticsWebsiteId = import.meta.env.VITE_ANALYTICS_WEBSITE_ID;
+
+      if (analyticsEndpoint && analyticsWebsiteId) {
+        const script = document.createElement("script");
+        script.defer = true;
+        script.src = `${analyticsEndpoint.replace(/\/$/, "")}/umami`;
+        script.dataset.websiteId = analyticsWebsiteId;
+        document.body.appendChild(script);
+      }
+    </script>
   </body>
 </html>

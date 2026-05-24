@@ -27,7 +27,7 @@ export function Logo({
   };
   return (
     <a
-      href="#top"
+      href="/"
       className={cn(
         "inline-flex items-center gap-2.5 select-none transition-opacity",
         text,
