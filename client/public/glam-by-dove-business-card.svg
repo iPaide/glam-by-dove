@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Glam By Dove business card</title>
+  <desc id="desc">A branded Glam By Dove business card with website, WhatsApp number, and Instagram handle.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2a121e"/>
+      <stop offset="0.56" stop-color="#3b1f2b"/>
+      <stop offset="1" stop-color="#5c2c3d"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="174" y1="96" x2="1026" y2="534" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f6df9a"/>
+      <stop offset="0.48" stop-color="#c9a24b"/>
+      <stop offset="1" stop-color="#8f6724"/>
+    </linearGradient>
+    <pattern id="pattern" width="96" height="96" patternUnits="userSpaceOnUse">
+      <path d="M48 8 88 48 48 88 8 48 48 8Z" fill="none" stroke="#c9a24b" stroke-opacity="0.16" stroke-width="2"/>
+      <circle cx="48" cy="48" r="5" fill="#c9a24b" fill-opacity="0.12"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#pattern)" opacity="0.5"/>
+  <rect x="54" y="54" width="1092" height="522" rx="24" fill="none" stroke="#c9a24b" stroke-opacity="0.55" stroke-width="2"/>
+
+  <path d="M600 88 676 192 600 296 524 192 600 88Z" fill="none" stroke="url(#gold)" stroke-width="10"/>
+  <path d="M600 122c-27 33-44 59-44 89 0 35 20 58 44 58s44-23 44-58c0-30-17-56-44-89Z" fill="none" stroke="url(#gold)" stroke-width="10" stroke-linejoin="round"/>
+
+  <text x="600" y="354" fill="#fff6df" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="700" text-anchor="middle" letter-spacing="5">GLAM</text>
+  <text x="600" y="405" fill="#f6df9a" font-family="Georgia, 'Times New Roman', serif" font-size="48" font-style="italic" text-anchor="middle">by Dove</text>
+  <text x="600" y="454" fill="#f9efd8" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" text-anchor="middle" letter-spacing="6">ADO-EKITI MAKEUP ARTIST</text>
+  <text x="600" y="492" fill="#e9d7ad" font-family="Arial, Helvetica, sans-serif" font-size="22" text-anchor="middle">Bridal Makeup · Gele · Owambe · Birthday · Lessons</text>
+
+  <g fill="#fff6df" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" text-anchor="middle">
+    <text x="292" y="548">WhatsApp: 0803 061 6727</text>
+    <text x="600" y="548">Instagram: @itz_dovesglam</text>
+    <text x="910" y="548">itzdovesglam.makeup</text>
+  </g>
+  <line x1="222" y1="523" x2="978" y2="523" stroke="#c9a24b" stroke-opacity="0.48" stroke-width="1.5"/>
+</svg>
