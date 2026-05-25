@@ -1,0 +1,23 @@
+{
+  "name": "Glam By Dove",
+  "short_name": "GBD",
+  "description": "Ado-Ekiti makeup artist for bridal makeup, gele styling, Owambe glam, birthday makeup, convocation looks, and makeup lessons.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#3B1F2B",
+  "theme_color": "#3B1F2B",
+  "icons": [
+    {
+      "src": "/glam-by-dove-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/glam-by-dove-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

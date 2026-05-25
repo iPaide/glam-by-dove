@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Glam By Dove icon</title>
+  <desc id="desc">A gold Glam By Dove monogram on a deep aubergine background.</desc>
+  <defs>
+    <linearGradient id="gold" x1="128" y1="96" x2="384" y2="416" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f6df9a"/>
+      <stop offset="0.48" stop-color="#c9a24b"/>
+      <stop offset="1" stop-color="#8f6724"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="36%" r="58%">
+      <stop offset="0" stop-color="#7a4050"/>
+      <stop offset="0.62" stop-color="#3b1f2b"/>
+      <stop offset="1" stop-color="#24101a"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#glow)"/>
+  <path d="M256 108 364 256 256 404 148 256 256 108Z" fill="none" stroke="url(#gold)" stroke-width="18"/>
+  <path d="M256 151c-39 48-64 86-64 128 0 50 29 83 64 83s64-33 64-83c0-42-25-80-64-128Z" fill="none" stroke="url(#gold)" stroke-width="18" stroke-linejoin="round"/>
+  <path d="M208 244c24 7 40 22 48 45 8-23 24-38 48-45" fill="none" stroke="#f6df9a" stroke-width="14" stroke-linecap="round"/>
+  <text x="256" y="286" fill="#fff6df" font-family="Georgia, 'Times New Roman', serif" font-size="116" font-weight="700" text-anchor="middle" letter-spacing="-4">GBD</text>
+  <circle cx="256" cy="408" r="10" fill="#c9a24b"/>
+</svg>

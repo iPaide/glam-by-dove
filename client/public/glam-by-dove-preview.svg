@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Glam By Dove website preview</title>
+  <desc id="desc">A branded preview card for Glam By Dove, an Ado-Ekiti makeup artist.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2a121e"/>
+      <stop offset="0.56" stop-color="#3b1f2b"/>
+      <stop offset="1" stop-color="#5c2c3d"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="174" y1="96" x2="1026" y2="534" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f6df9a"/>
+      <stop offset="0.48" stop-color="#c9a24b"/>
+      <stop offset="1" stop-color="#8f6724"/>
+    </linearGradient>
+    <pattern id="pattern" width="96" height="96" patternUnits="userSpaceOnUse">
+      <path d="M48 8 88 48 48 88 8 48 48 8Z" fill="none" stroke="#c9a24b" stroke-opacity="0.16" stroke-width="2"/>
+      <circle cx="48" cy="48" r="5" fill="#c9a24b" fill-opacity="0.12"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#pattern)" opacity="0.5"/>
+  <rect x="54" y="54" width="1092" height="522" rx="24" fill="none" stroke="#c9a24b" stroke-opacity="0.55" stroke-width="2"/>
+  <path d="M600 108 684 222 600 336 516 222 600 108Z" fill="none" stroke="url(#gold)" stroke-width="10"/>
+  <path d="M600 144c-30 36-49 65-49 98 0 38 22 64 49 64s49-26 49-64c0-33-19-62-49-98Z" fill="none" stroke="url(#gold)" stroke-width="10" stroke-linejoin="round"/>
+  <text x="600" y="392" fill="#fff6df" font-family="Georgia, 'Times New Roman', serif" font-size="88" font-weight="700" text-anchor="middle" letter-spacing="5">GLAM</text>
+  <text x="600" y="444" fill="#f6df9a" font-family="Georgia, 'Times New Roman', serif" font-size="48" font-style="italic" text-anchor="middle">by Dove</text>
+  <text x="600" y="494" fill="#f9efd8" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" text-anchor="middle" letter-spacing="6">ADO-EKITI MAKEUP ARTIST</text>
+  <text x="600" y="532" fill="#e9d7ad" font-family="Arial, Helvetica, sans-serif" font-size="22" text-anchor="middle">Bridal Makeup · Gele · Owambe · Birthday · Lessons</text>
+</svg>
