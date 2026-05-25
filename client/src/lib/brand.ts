@@ -52,7 +52,7 @@ export const HERO = {
   eyebrow: "Bridal · Owambe · Aso-Ebi · Gele · Lessons",
   headline: "Flawless glam for your most",
   headlineItalic: "memorable moments",
-  body: "From traditional weddings and introductions to Owambe Saturdays, birthdays, and convocation days, Glam By Dove creates polished, long-wearing looks for Nigerian celebrations. Let's make you unforgettable.",
+  body: "From traditional weddings and introductions to Owambe Saturdays, birthdays, and convocation days, Glam By Dove creates polished, long-wearing makeup in Ado-Ekiti, with bookings across Akure, Ibadan, Ekiti, and beyond by agreement. Let's make you unforgettable.",
 };
 
 export const HERO_IMAGE =
@@ -108,7 +108,7 @@ export const SERVICES: Service[] = [
     name: "The Royal Bridal",
     italic: "for the aisle",
     blurb:
-      "A custom bridal beauty experience for traditional weddings, white weddings, introductions, and bridal portraits. Your quote is shaped around timing, travel, touch-ups, gele, aso-ebi colors, and the full bridal party plan.",
+      "A custom bridal makeup experience for traditional weddings, white weddings, introductions, and bridal portraits in Ado-Ekiti, Ekiti State, Akure, Ibadan, and travel locations by agreement. Your quote is shaped around timing, travel, touch-ups, gele, aso-ebi colors, and the full bridal party plan.",
     inclusions: [
       "In-depth skin prep & priming",
       "Premium long-wear bridal makeup",
@@ -124,7 +124,7 @@ export const SERVICES: Service[] = [
     name: "Owambe Glam",
     italic: "for the celebration",
     blurb:
-      "Party-ready, long-wearing glam built for Owambe heat, aso-ebi color stories, family photos, greetings, and dance floors. Bold or soft — your call.",
+      "Party-ready, long-wearing Owambe makeup for Ado-Ekiti celebrations, introductions, aso-ebi color stories, family photos, greetings, and dance floors. Bold or soft — your call.",
     inclusions: [
       "Sweat-resistant base & set",
       "Statement eye or soft glam",
@@ -140,7 +140,7 @@ export const SERVICES: Service[] = [
     name: "Birthday Glam",
     italic: "for your spotlight",
     blurb:
-      "Camera-ready birthday glam for dinners, shoots, parties, and intimate celebrations. Soft glam, full glam, or a look built around your birthday outfit and color theme.",
+      "Camera-ready birthday makeup in Ado-Ekiti for dinners, shoots, parties, and intimate celebrations. Soft glam, full glam, or a look built around your birthday outfit and color theme.",
     inclusions: [
       "Skin-prepped photo-ready base",
       "Soft or full glam finish",
@@ -156,7 +156,7 @@ export const SERVICES: Service[] = [
     name: "Gele Artist",
     italic: "the architectural crown",
     blurb:
-      "Sculpted, photo-ready gele styling for trad, introduction, church, Owambe, and aso-ebi moments. Booked alone or layered onto a glam package as a finishing crown.",
+      "Sculpted, photo-ready gele styling by an Ado-Ekiti gele artist for trad, introduction, church, Owambe, and aso-ebi moments. Booked alone or layered onto a glam package as a finishing crown.",
     inclusions: [
       "Custom gele consultation",
       "Pleated, sculpted finish",
@@ -172,7 +172,7 @@ export const SERVICES: Service[] = [
     name: "Convocation & Shoots",
     italic: "for your milestone",
     blurb:
-      "Fresh, photo-friendly glam tailored for convocation portraits, graduation ceremonies, signing-out shoots, and editorial sessions. Skin-first, camera-ready.",
+      "Fresh, photo-friendly graduation makeup tailored for convocation portraits, signing-out shoots, ceremonies, and editorial sessions around Ado-Ekiti and nearby campuses. Skin-first, camera-ready.",
     inclusions: [
       "Dewy, camera-ready base",
       "Soft definition & natural lash",
@@ -188,7 +188,7 @@ export const SERVICES: Service[] = [
     name: "Makeup Lessons",
     italic: "learn your own face",
     blurb:
-      "Personal makeup lessons and tutorials for beginners or beauty lovers who want to improve everyday glam, owambe-ready application, product use, and technique.",
+      "Personal makeup lessons and tutorials in Ado-Ekiti for beginners, beauty lovers, and aspiring artists who want to improve everyday glam, Owambe-ready application, product use, and technique.",
     inclusions: [
       "Beginner-friendly step-by-step guidance",
       "Product and brush recommendations",
@@ -301,7 +301,7 @@ export const TESTIMONIALS: Testimonial[] = [
 export const FAQS = [
   {
     q: "Where are you based, and do you travel?",
-    a: "Glam By Dove is based in Ado-Ekiti, with easy access to Akure and Ibadan. Travel within Nigeria and for destination events is available once timing, logistics, and travel costs are agreed.",
+    a: "Glam By Dove is a makeup artist in Ado-Ekiti, Ekiti State, with easy access to Akure and Ibadan. Travel within Nigeria and for destination events is available once timing, logistics, and travel costs are agreed.",
   },
   {
     q: "How early should I book my bridal date?",
@@ -309,7 +309,7 @@ export const FAQS = [
   },
   {
     q: "Can I book gele styling alone?",
-    a: "Yes. Gele Artist bookings are available as a stand-alone service or as a finishing crown layered onto any glam package.",
+    a: "Yes. Gele Artist bookings are available as a stand-alone service in Ado-Ekiti or as a finishing crown layered onto any bridal, Owambe, or birthday glam package.",
   },
   {
     q: "What products do you use?",

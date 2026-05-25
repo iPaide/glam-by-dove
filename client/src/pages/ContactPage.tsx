@@ -9,15 +9,15 @@ export default function ContactPage() {
   return (
     <SiteLayout>
       <DocumentMeta
-        title="Contact & Booking — Glam By Dove"
-        description="Check Glam By Dove availability, send your event details, and book bridal, Owambe, birthday, gele, convocation, or makeup lesson services."
+        title="Book a Makeup Artist in Ado-Ekiti — Glam By Dove"
+        description="Contact Glam By Dove to book bridal makeup, Owambe glam, birthday makeup, gele styling, convocation makeup, or lessons in Ado-Ekiti."
         path="/contact"
       />
       <PageIntro
         eyebrow="Contact"
         title="Check your"
         italic="date"
-        body="Send your event details, confirm availability, agree timing and logistics, then secure your Glam By Dove booking through WhatsApp."
+        body="Send your event date, location, and service details to book Glam By Dove in Ado-Ekiti or arrange travel for Akure, Ibadan, Ekiti events, and destination bookings."
       />
       <BookingFlow />
       <Contact />

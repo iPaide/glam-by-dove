@@ -90,10 +90,17 @@ export function About() {
               photography, ready-by time, and the little details that make a
               look feel finished in person and on camera.
             </p>
+            <p>
+              If you are searching for a makeup artist in Ado-Ekiti for bridal
+              makeup, Owambe glam, birthday makeup, gele styling, convocation
+              photos, or personal makeup tutorials, Glam By Dove brings a
+              calm, polished beauty experience to your home, hotel, studio, or
+              event location.
+            </p>
             <div className="grid gap-3 sm:grid-cols-2">
               {[
-                "Bridal, Owambe, gele, birthday, and lessons",
-                "Ado-Ekiti based, available to travel by agreement",
+                "Bridal makeup, Owambe glam, gele, birthday, and lessons",
+                "Ado-Ekiti makeup artist serving Ekiti, Akure, and Ibadan",
                 "Skin-first prep with soft or full glam finishes",
                 "Instant WhatsApp response for date checks",
               ].map((point) => (

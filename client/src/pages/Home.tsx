@@ -15,8 +15,8 @@ export default function Home() {
   return (
     <SiteLayout>
       <DocumentMeta
-        title="Glam By Dove — Bridal, Gele & Owambe Glam | Ado-Ekiti"
-        description="Nigerian bridal makeup, gele artistry, Owambe, birthday glam, convocation looks, and makeup lessons based in Ado-Ekiti."
+        title="Makeup Artist in Ado-Ekiti — Glam By Dove | Bridal, Gele & Owambe"
+        description="Glam By Dove is an Ado-Ekiti makeup artist for bridal makeup, gele styling, Owambe glam, birthday makeup, convocation looks, and makeup lessons."
         path="/"
       />
       <Hero />

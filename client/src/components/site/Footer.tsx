@@ -19,9 +19,10 @@ export function Footer() {
           <div className="md:col-span-5">
             <Logo variant="light" size="lg" />
             <p className="mt-5 max-w-[40ch] text-[14.5px] leading-[1.75] text-[color:var(--cream)]/70">
-              Luxury bridal makeup, Owambe glam, birthday glam, gele artistry,
-              graduation looks, and makeup lessons — for your most memorable
-              moments.
+              Ado-Ekiti makeup artist for luxury bridal makeup, Owambe glam,
+              birthday glam, gele artistry, graduation looks, and makeup
+              lessons — available for Ekiti, Akure, Ibadan, and travel
+              bookings by agreement.
             </p>
             <div className="mt-6 flex items-center gap-3">
               <a
@@ -124,7 +125,8 @@ export function Footer() {
                 </a>
               </li>
               <li className="font-italic-serif italic text-[color:var(--cream)]/70 pt-2">
-                Based in {BRAND.baseCity}; available to travel by agreement.
+                Makeup artist based in {BRAND.baseCity}; serving Ekiti,
+                Akure, Ibadan, and available to travel by agreement.
               </li>
             </ul>
           </div>

@@ -8,15 +8,15 @@ export default function PortfolioPage() {
   return (
     <SiteLayout>
       <DocumentMeta
-        title="Portfolio — Glam By Dove Client Looks"
-        description="Browse selected Glam By Dove bridal, Owambe, birthday, gele, and convocation looks with direct Instagram reel links."
+        title="Ado-Ekiti Makeup Portfolio — Glam By Dove Client Looks"
+        description="Browse Glam By Dove bridal makeup, Owambe glam, birthday makeup, gele styling, and convocation looks from Ado-Ekiti and nearby bookings."
         path="/portfolio"
       />
       <PageIntro
         eyebrow="Portfolio"
         title="Real clients"
         italic="real moments"
-        body="Browse selected bridal, Owambe, birthday, gele, and convocation looks, then open the matching Instagram post or reel for a closer view."
+        body="Browse selected bridal makeup, Owambe glam, birthday looks, gele styling, and convocation makeup by Glam By Dove, then open the matching Instagram post or reel for a closer view."
       />
       <Portfolio />
       <Contact />

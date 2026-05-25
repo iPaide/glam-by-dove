@@ -9,22 +9,22 @@ export default function LessonsPage() {
   return (
     <SiteLayout>
       <DocumentMeta
-        title="Makeup Lessons — Glam By Dove"
-        description="Book beginner-friendly makeup lessons and tutorials with Glam By Dove for brows, base work, eyes, lips, product use, and event-ready glam."
+        title="Makeup Lessons in Ado-Ekiti — Glam By Dove Tutorials"
+        description="Book beginner-friendly makeup lessons in Ado-Ekiti with Glam By Dove for brows, base work, eyes, lips, product use, and event-ready glam."
         path="/lessons"
       />
       <PageIntro
         eyebrow="Makeup Lessons"
         title="Learn your"
         italic="own face"
-        body="Book beginner-friendly makeup lessons and tutorials for product knowledge, skin prep, brows, eyes, base work, lips, and confident everyday or event-ready glam."
+        body="Book beginner-friendly makeup lessons and tutorials in Ado-Ekiti for product knowledge, skin prep, brows, eyes, base work, lips, and confident everyday or event-ready glam."
       />
       <Services
         onlyService="lessons"
         eyebrow="Lesson Details"
         title="Makeup lessons &"
         italic="tutorials"
-        body="A practical one-on-one learning session for beginners and beauty lovers who want better product use, brows, base work, eyes, lips, and event-ready technique."
+        body="A practical one-on-one makeup tutorial in Ado-Ekiti for beginners and beauty lovers who want better product use, brows, base work, eyes, lips, and event-ready technique."
       />
       <BookingFlow />
       <Contact />

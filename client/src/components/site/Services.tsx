@@ -22,7 +22,7 @@ export function Services({
   eyebrow = "The Menu",
   title = "Services &",
   italic = "rates",
-  body = "Every booking begins with your event details: date, city, outfit, aso-ebi shade, and ready-by time. Travel and on-site styling are available across Southwestern Nigeria and beyond.",
+  body = "Every booking begins with your event details: date, city, outfit, aso-ebi shade, and ready-by time. Makeup services are based in Ado-Ekiti, with travel and on-site styling available across Ekiti, Akure, Ibadan, Southwestern Nigeria, and beyond by agreement.",
 }: ServicesProps) {
   const ref = useReveal<HTMLElement>();
   const availableServices = onlyService

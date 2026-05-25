@@ -9,15 +9,15 @@ export default function ServicesPage() {
   return (
     <SiteLayout>
       <DocumentMeta
-        title="Services & Rates — Glam By Dove"
-        description="Explore Glam By Dove bridal makeup, Owambe glam, birthday glam, gele artistry, convocation looks, and makeup lesson rates."
+        title="Makeup Services in Ado-Ekiti — Glam By Dove Rates"
+        description="Explore Glam By Dove rates for bridal makeup, Owambe glam, birthday makeup, gele artistry, convocation looks, and makeup lessons in Ado-Ekiti."
         path="/services"
       />
       <PageIntro
         eyebrow="Services"
         title="Glam for"
         italic="every moment"
-        body="Explore bridal, Owambe, birthday, gele, convocation, and makeup lesson bookings with rates, inclusions, and a simple booking flow."
+        body="Explore bridal makeup, Owambe glam, birthday makeup, gele styling, convocation looks, and makeup lesson bookings in Ado-Ekiti, with travel available to Akure, Ibadan, and beyond by agreement."
       />
       <Services />
       <BookingFlow />
