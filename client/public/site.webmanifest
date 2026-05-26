@@ -8,13 +8,13 @@
   "theme_color": "#3B1F2B",
   "icons": [
     {
-      "src": "/glam-by-dove-icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/glam-by-dove-icon.png",
+      "src": "/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
