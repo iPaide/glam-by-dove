@@ -8,6 +8,33 @@ import { ArrowRight } from "lucide-react";
 import { BRAND, HERO, HERO_IMAGE } from "@/lib/brand";
 import { useReveal } from "@/hooks/useReveal";
 
+function SoftLaunchNotice() {
+  return (
+    <div className="reveal border border-[color:var(--gold)]/40 bg-[color:var(--cream)]/78 px-4 py-3 shadow-[0_18px_50px_-34px_rgba(59,31,43,0.55)] backdrop-blur">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-[color:var(--gold)]">
+            Soft launch
+          </p>
+          <p className="mt-1 font-display text-[19px] leading-tight text-[color:var(--aubergine)]">
+            Full website launching soon
+          </p>
+          <p className="mt-1 text-[13px] leading-relaxed text-[color:var(--cocoa)]/72">
+            Bookings are already open for bridal makeup, gele, Owambe glam, birthday looks,
+            and makeup lessons in Ado-Ekiti.
+          </p>
+        </div>
+        <a
+          href={BRAND.whatsappUrl}
+          className="inline-flex h-10 shrink-0 items-center justify-center border border-[color:var(--gold)]/50 px-4 text-[10.5px] font-semibold uppercase tracking-[0.2em] text-[color:var(--aubergine)] transition-colors hover:bg-[color:var(--aubergine)] hover:text-[color:var(--cream)]"
+        >
+          Book Now
+        </a>
+      </div>
+    </div>
+  );
+}
+
 export function Hero() {
   const ref = useReveal<HTMLDivElement>();
 
@@ -27,6 +54,12 @@ export function Hero() {
         aria-hidden
         className="pointer-events-none absolute -right-40 top-10 size-[520px] rounded-full bg-[radial-gradient(circle_at_center,rgba(201,162,75,0.25),transparent_60%)]"
       />
+
+      <div className="container relative z-10 mb-9 lg:mb-12">
+        <div className="max-w-[760px]">
+          <SoftLaunchNotice />
+        </div>
+      </div>
 
       <div className="container grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
         {/* Text column */}
